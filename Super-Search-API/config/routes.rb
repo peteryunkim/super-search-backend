@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :search, only: [:index, :create, :destroy]
-      resources :note, only: [:index, :create, :update, :edit]
+      resources :note, only: [:index, :create, :edit]
       delete '/note', to:'note#destroy'
+      patch '/note', to:'note#update'
     end
   end
 end
