@@ -17,7 +17,7 @@ class Api::V1::NoteController < ApplicationController
   end
 
   def destroy
-  	note = Note.find_by(id: params[:id])
+  	note = Note.find(params[:id])
   	# binding.pry
   	note.delete
   	render json: note
